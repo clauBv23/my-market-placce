@@ -12,6 +12,10 @@ contract ERC721Enumerable is ERC721, IERC721Enumerable{
 
     mapping(address =>uint256[]) private _ownerTokens;
 
+  constructor(){
+    _registerInterface(bytes4(keccak256('totalSupply()')^
+    keccak256('tokenByIndex(bytes4)')^keccak256('tokenOfOwnerByIndex(bytes4)')));
+  }
 
     /// @notice Count NFTs tracked by this contract
     /// @return A count of valid NFTs tracked by this contract, where each one of
