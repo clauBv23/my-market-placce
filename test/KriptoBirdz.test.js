@@ -2,7 +2,6 @@ const {assert} = require('chai');
 
 const KriptoBirdz = artifacts.require("KriptoBirdz");
 
-
 //check for chai
 require('chai')
 .use(require('chai-as-promised'))
