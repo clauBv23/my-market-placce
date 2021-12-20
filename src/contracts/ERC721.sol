@@ -18,20 +18,6 @@ contract ERC721 is ERC165, IERC721{
     keccak256('ownerOf(bytes4)')^keccak256('transferFrom(bytes4)')));
   }
 
-  // event Tranfer( 
-  //   address indexed from, 
-  //   address indexed to, 
-  //   uint256 indexed tokenId);
-
-  //   /// @dev This emits when the approved address for an NFT is changed or
-  //   ///  reaffirmed. The zero address indicates there is no approved address.
-  //   ///  When a Transfer event emits, this also indicates that the approved
-  //   ///  address for that NFT (if any) is reset to none.
-  //   event Approval(
-  //     address indexed _owner, 
-  //     address indexed _approved, 
-  //     uint256 indexed _tokenId);
-
   function _mint( address to, uint256 tokenId) internal virtual{
     require(to != address(0x0), 'Minting to zero address must be.');
     require(_tokenOwner[tokenId] == address(0x0), 'Token already minted.');
